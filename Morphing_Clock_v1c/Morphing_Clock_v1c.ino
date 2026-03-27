@@ -210,6 +210,22 @@ void loop() {
     {
     timeClient.setTimeOffset(utcOffsetInSeconds + 3600*DST); 
     DST0 = DST;
+    timeClient.update();
+    Ora = timeClient.getHours(); 
+    delay(500);
+    _Hour = 25; 
+    if (Ora > 12) 
+      {
+        Ora = Ora - 12;
+        am = 0;
+      }
+      else
+      {
+        Ora = Ora;
+        am = 1;
+      }
+    if (Ora >= 10) digit5.Draw(Ora / 10);
+   // ESP.restart();
     }
   
   if (WiFi.status() == WL_CONNECTED)  // check WiFi connection status
