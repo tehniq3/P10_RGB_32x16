@@ -11,8 +11,9 @@ and used a lot of info from https://github.com/tehniq3/P5_64x32_HUB75/
 ![base schematic](https://blogger.googleusercontent.com/img/a/AVvXsEg_t0bRiULGR1e1vRvuZUeo0Z1NmJ7mmPbkMwFglU3lN88XsmZ48ntaGztgJ25FcDjAGR9zdDNmhoGXXjXvW0DhNpLxPlw8fTx36MomSeYYVoTSnYWwh1HvNDwnK0baad0DJ0AUA2aRZZA_MuRXIaFFV0D4gy8b6E_n8qgnHr64i1C1RdkgSeBr379Gm_B4)
 ![DST switch](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1SOZyTIcX1K__TIC4U16QQlZ2WozkbcQPB7rD8_9VJawgxLGLJSFcbLdiak3HvcLBjwsbQ66YtORgl9uecrZjV0mmvfbHjI-2TRo-2f-lELfyS3buuZmZlA_IzrG9y0CoyqAWBPsM-OgwZpn1AWfJrEExqWm02uniIDa-nhGA7zUIK81LI_Waf5H51fTT/w200-h101/DST_analog_sw.png)
 
-My article:
+My articles:
 - https://nicuflorica.blogspot.com/2026/03/ceas-ntp-cu-tranzitii-animate-pe-afisaj.html
+- https://nicuflorica.blogspot.com/2026/03/ceas-ntp-cu-tranzitii-animate-pe-afisaj_30.html
 
 ![poze](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgftms-GIQPrkTVAWchhse1jeMAKO1oS1AG8-qAix36qPtXB8pDSjN5SH3nvmTrQ4fIrHJ5tJcoN7Fj_37PMhGBfM14Uzrj1Q9zpK6UyKhtWOobJj4vjqmEkDjPyYbWv88L9UWdCHXGrPwsrdpvndWriUKlPSNnTUwJPN5AqBa1wJZY1dBiDFvPRIHHvBK9/w200-h93/P10_RGB_HW_01.jpg)
 
