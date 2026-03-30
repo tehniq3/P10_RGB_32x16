@@ -16,6 +16,7 @@ My articles:
 - https://nicuflorica.blogspot.com/2026/03/ceas-ntp-cu-tranzitii-animate-pe-afisaj_30.html
 
 ![poze](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgftms-GIQPrkTVAWchhse1jeMAKO1oS1AG8-qAix36qPtXB8pDSjN5SH3nvmTrQ4fIrHJ5tJcoN7Fj_37PMhGBfM14Uzrj1Q9zpK6UyKhtWOobJj4vjqmEkDjPyYbWv88L9UWdCHXGrPwsrdpvndWriUKlPSNnTUwJPN5AqBa1wJZY1dBiDFvPRIHHvBK9/w200-h93/P10_RGB_HW_01.jpg)
+![poza2](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4DOQZXPfi2bm-PO5POlwknOoCXspZ7Su7B_wDqd7xONS3vVQj98EZ-XkmmY1RW4_LxDOBOEBdP2Xz7Yz6LkGcfpXwk95u8718U3QC8AcNuvMo73S0ENoWYp-4ZHRUopU9aWbnyk_I3_Z8zCGoODIOs7oRNRoxO-5zYy2zh2RH6kA5zG_D23mYX68EEtKA/w200-h93/P10_RGB_HW_03.jpg)
 
 ![ceas1](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_6vbkp0KLdzG40tQ9UUggOAitK70Kb-3WmMoT3f9mtQv56vqptZVJ2VVjUHnpG0lbKjyzVB0-OWiqj6dTF4NDXW1hr_6bRQtlbUj_63dncGbFJLTWZtz-X-n9uEY82l3I4JxnqQSvduRozj7nSGpLS05Zwnc-o3SD8CLGa4hlPxoGJwFtK2Ib6_kiju1c/w200-h93/P10_morphing_v0_01.jpg)
 ![ceas2](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPJv_ORWyK__V4VvmDhOoCe0wWXzqpNlvgNc3tSvQ_Ftli3U8grDSRwZNG9JAFZWL7YZsXelntjoUn2NavtEqiXW6vD82hAQIF9g5CzZqeX3mfq7x-aLjdjvcgWKN2T6PDL5_z-2xwV_a1j3BgViVdtogWvNLnVTIzqGeCOe72OChuVJCpbWwoWv9S2hZ1/w200-h93/P10_morphing_v0_03.jpg)
