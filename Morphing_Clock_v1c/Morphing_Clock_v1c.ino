@@ -188,6 +188,7 @@ while (An < 0)
         Ora = Ora;
         am = 1;
       }
+     if (Ora == 0) Ora = 12;
       display.fillScreen(display.color565(0, 0, 0));
         digit1.DrawColon(display.color565(nivel, nivel, nivel));
         digit3.DrawColon(display.color565(nivel, nivel, nivel));
@@ -217,7 +218,6 @@ void loop() {
     if (Ora > 12) 
       {
         Ora = Ora - 12;
-       if (Ora == 0) Ora = 12;
         am = 0;
       }
       else
@@ -225,6 +225,7 @@ void loop() {
         Ora = Ora;
         am = 1;
       }
+    if (Ora == 0) Ora = 12;
     if (Ora >= 10) digit5.Draw(Ora / 10);
    // ESP.restart();
     }
@@ -312,7 +313,6 @@ void loop() {
       if (Ora > 12) 
       {
         Ora = Ora - 12;
-       if (Ora == 0) Ora = 12;
         am = 0;
       }
       else
@@ -320,7 +320,8 @@ void loop() {
         Ora = Ora;
         am = 1;
       }
-        
+      if (Ora == 0) Ora = 12; 
+     
       if (_Epoch == 0)
       { // If we didn't have a previous time. Just draw it without morphing.
         digit0.Draw(Seconda % 10);
