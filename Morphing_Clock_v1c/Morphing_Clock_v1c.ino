@@ -217,6 +217,7 @@ void loop() {
     if (Ora > 12) 
       {
         Ora = Ora - 12;
+       if (Ora == 0) Ora = 12;
         am = 0;
       }
       else
@@ -311,6 +312,7 @@ void loop() {
       if (Ora > 12) 
       {
         Ora = Ora - 12;
+       if (Ora == 0) Ora = 12;
         am = 0;
       }
       else
