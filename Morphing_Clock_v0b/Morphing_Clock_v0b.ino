@@ -151,7 +151,8 @@ void loop() {
       }
       else
         Hour = Hour;
-
+      if (Hour == 0) Hour = 12;  // 0AM -> 12 AM
+     
       if (_Epoch == 0) 
       { // If we didn't have a previous time. Just draw it without morphing.
         digit0.Draw(Second % 10);
@@ -191,7 +192,7 @@ void loop() {
           if (h1 > 0) 
           {
             if (h1 != digit5.Value())
-               digit5.Morph(h1);
+              digit5.Draw(h1); // no ok digit5.Morph(h1);
           }
           else 
            digit6.Draw(1);   // put tens of hours invisible
