@@ -172,6 +172,7 @@ while (An < 0)
         Ora = Ora;
         am = 1;
       }
+     if (Ora == 0) Ora = 12;  // 0 AM -> 12 AM
         digit0.Draw(Seconda % 10);
         digit1.Draw(Seconda / 10);
         digit2.Draw(Minut % 10);
@@ -272,7 +273,8 @@ void loop() {
         Ora = Ora;
         am = 1;
       }
-        
+      if (Ora == 0) Ora = 12;  // 0 AM -> 12 AM
+     
       if (_Epoch == 0)
       { // If we didn't have a previous time. Just draw it without morphing.
         digit0.Draw(Seconda % 10);
@@ -335,7 +337,7 @@ void loop() {
           if (h1 > 0) 
           {
             if (h1 != digit5.Value())
-               digit5.Morph(h1);
+            digit5.Draw(Ora / 10); // not ok as digit5.Morph(h1);
           }
           else 
            digit6.Draw(1);   // put tens of hours invisible
