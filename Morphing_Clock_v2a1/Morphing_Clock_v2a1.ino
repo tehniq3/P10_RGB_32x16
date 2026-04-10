@@ -16,7 +16,7 @@
  v.1c4 - put 1 for tens not morphing moving
  v.1c5 - replaced 0 AM with 12 AM
  v.2 - changed the digit lenght from 3 to 2 digits in order to show 24-hour format and migrated to 24-hour format
- v.2a - corrected 5 and 0 transation + clean upper display 
+ v.2a - corrected 5 and 0 transation + clean upper display and 2/3 to 0 (23 to 00)
 */
 
 // ESP8266 WiFi main library
@@ -370,6 +370,7 @@ void loop() {
             TFDrawText (&display, lstr1, 0, 0, display.color565 (0, nivel, nivel));  // show data
             display.drawPixel( 8, 4, display.color565 (nivel, nivel, nivel));
             display.drawPixel(16, 4, display.color565 (nivel, nivel, nivel));
+lang = 0; 
             }
           else
           {
