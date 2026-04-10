@@ -132,7 +132,7 @@ void Digit::Morph5() {
     drawPixel(segWidth - i, 0, _color); // Draw D
     delay(animSpeed);
   }
-  if (segWidth < segHeight)
+  if (segWidth < segHeight) // added by niq_ro
   {
   drawPixel(segWidth + 1, segHeight + 3 + i, black); // Erase B
   delay(animSpeed);
@@ -224,7 +224,7 @@ void Digit::Morph0() {
       if (i > 0) drawLine(segWidth - i + 1, segHeight * 2+1, segWidth - i + 1, segHeight + 2, black);
     
       drawPixel(1+i, segHeight + 1, black); // Erase G left to right
-      if (i<segWidth) drawPixel(segWidth + 1, segHeight + 1- i, _color);// Draw C
+      if (i<=segWidth) drawPixel(segWidth + 1, segHeight - i, _color);// Draw C - corrected by niq_ro
     }
 
     if (_value==3) { // if 3 to 0, B to F, C to E
