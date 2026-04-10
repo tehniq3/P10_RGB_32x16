@@ -1,1 +1,1 @@
-some ugs at 23 to 00
+some issues at transition from 23 to 00
