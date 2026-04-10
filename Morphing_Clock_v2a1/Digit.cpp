@@ -203,7 +203,7 @@ void Digit::Morph9() {
 
 void Digit::Morph0() {
   // ZERO
-  for (int i = 0; i <= segawidth; i++)
+  for (int i = 0; i <= segWidth; i++)
   {
     if (_value==1) { // If 1 to 0, slide B to F and E to C  
       // slide B to F 
