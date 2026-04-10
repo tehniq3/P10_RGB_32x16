@@ -203,7 +203,7 @@ void Digit::Morph9() {
 
 void Digit::Morph0() {
   // ZERO
-  for (int i = 0; i <= segHeight; i++)
+  for (int i = 0; i <= segawidth; i++)
   {
     if (_value==1) { // If 1 to 0, slide B to F and E to C  
       // slide B to F 
@@ -227,7 +227,7 @@ void Digit::Morph0() {
       if (i<segWidth) drawPixel(segWidth + 1, segHeight + 1- i, _color);// Draw C
     }
 
-    if (_value==3) { // B to F, C to E
+    if (_value==3) { // if 3 to 0, B to F, C to E
       // slide B to F 
       drawLine(segWidth - i, segHeight * 2+1 , segWidth - i, segHeight + 2, _color);
       if (i > 0) drawLine(segWidth - i + 1, segHeight * 2+1, segWidth - i + 1, segHeight + 2, black);
