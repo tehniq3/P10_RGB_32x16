@@ -130,12 +130,12 @@ void Digit::Morph5() {
     drawPixel(segWidth - i, segHeight * 2 + 2, _color); // Draw as A
     drawPixel(segWidth - i, 0, _color); // Draw D
     delay(animSpeed);
+  }
   if (segWidth < segHeight) // added by niq_ro
   {
-  drawPixel(segWidth + 1, segHeight + 3 + i, black); // Erase B
-  delay(animSpeed);
-  }
-  }
+   drawPixel(segWidth + 1, segHeight * 2 + 1, black); // Erase B
+   delay(animSpeed);
+  } 
 }
 
 void Digit::Morph6() {
