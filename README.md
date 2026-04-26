@@ -15,6 +15,7 @@ My articles:
 - https://nicuflorica.blogspot.com/2026/03/ceas-ntp-cu-tranzitii-animate-pe-afisaj.html
 - https://nicuflorica.blogspot.com/2026/03/ceas-ntp-cu-tranzitii-animate-pe-afisaj_30.html
 - https://nicuflorica.blogspot.com/2026/04/ceas-ntp-cu-tranzitii-animate-morphing.html
+- https://nicuflorica.blogspot.com/2026/04/ceas-ntp-cu-tranzitii-animate-morphing_26.html
 
 ![poze](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgftms-GIQPrkTVAWchhse1jeMAKO1oS1AG8-qAix36qPtXB8pDSjN5SH3nvmTrQ4fIrHJ5tJcoN7Fj_37PMhGBfM14Uzrj1Q9zpK6UyKhtWOobJj4vjqmEkDjPyYbWv88L9UWdCHXGrPwsrdpvndWriUKlPSNnTUwJPN5AqBa1wJZY1dBiDFvPRIHHvBK9/w200-h93/P10_RGB_HW_01.jpg)
 ![poza2](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4DOQZXPfi2bm-PO5POlwknOoCXspZ7Su7B_wDqd7xONS3vVQj98EZ-XkmmY1RW4_LxDOBOEBdP2Xz7Yz6LkGcfpXwk95u8718U3QC8AcNuvMo73S0ENoWYp-4ZHRUopU9aWbnyk_I3_Z8zCGoODIOs7oRNRoxO-5zYy2zh2RH6kA5zG_D23mYX68EEtKA/w200-h93/P10_RGB_HW_03.jpg)
