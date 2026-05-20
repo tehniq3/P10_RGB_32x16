@@ -702,69 +702,104 @@ void OpenMeteo()
     tpactualizare = millis();
 }
 
+
+// ==========================================
+// PARTEA 3: CURS VALUTAR BNR (EUR / RON)
+// ==========================================
 void cursValutar()
 {
-// ==========================================
-    // PARTEA 3: CURS VALUTAR BNR (EUR / RON)
-    // ==========================================
-    {
-    WiFiClientSecure client3;
-    HTTPClient http3;
+  Serial.println("=== Curs BNR (Stream) ===");
+  
+  WiFiClientSecure client3;
+  HTTPClient http3;
 
-    // Pe ESP8266, pentru a nu avea probleme cu certificatele SSL, setam clientul ca "insecure"
-    // (Acest lucru este ok pentru date publice necritice precum cursul valutar)
-    client3.setInsecure();
+  client3.setInsecure();
+  
+  // FOARTE IMPORTANT: Reducem bufferele SSL pentru a consuma mai puțină RAM
+  // Valoarea standard e 2048, o reducem la 512. E suficient pentru BNR.
+  client3.setBufferSizes(512, 512); 
+  
+  http3.setTimeout(10000);
+  http3.setUserAgent("ESP8266-NTP-Clock/1.0");
+  http3.addHeader("Connection", "close");
 
-    // Initializam conexiunea HTTPS
-    http3.begin(client3, bnr_xml_url);
+  if (!http3.begin(client3, bnr_xml_url)) {
+    Serial.println("Eroare init conexiune");
+    meteo10 = "Eroare BNR";
+    return;
+  }
+  
+  int httpCode3 = http3.GET();
+  Serial.print("HTTP BNR: ");
+  Serial.println(httpCode3);
+
+  if (httpCode3 == HTTP_CODE_OK) {
+    // Obținem un "flux" de date, în loc să descărcăm tot textul în RAM
+    WiFiClient& stream = http3.getStream(); 
     
-    // Trimitem cererea GET
-    int httpCode3 = http3.GET();
-
-    // Verificam daca am primit un raspuns valid (cod 200 inseamna OK)
-    if (httpCode3 == HTTP_CODE_OK) {
-      String payload3 = http3.getString(); // Salvam tot continutul XML intr-un String
+    String target = "EUR";
+    int matchIndex = 0;
+    bool foundEUR = false;
+    bool readingValue = false;
+    String euroValue = "";
+    
+    unsigned long timeout = millis();
+    
+    // Citim byte cu byte cât timp avem date sau nu am depășit 5 secunde
+    while ((stream.available() || stream.connected()) && (millis() - timeout < 5000)) {
       
-      // Cautam cursul pentru EUR in XML
-      // In fisierul BNR, cursul apare sub forma: <Rate currency="EUR">4.9500</Rate>
-      
-      int startIndex = payload3.indexOf("EUR"); 
-      
-      if (startIndex != -1) {
-        // Gasim primul ">" dupa "EUR" pentru a ajunge la valoare
-        int valStart = payload3.indexOf(">", startIndex) + 1;
-        // Gasim "<" care inchide valoarea
-        int valEnd = payload3.indexOf("<", valStart);
-        
-        // Extragem substring-ul cu valoarea
-        String cursEuro = payload3.substring(valStart, valEnd);
-        
-        Serial.println("----------------------------------");
-        Serial.print("Cursul EUR actualizat: ");
-        Serial.println(cursEuro);
-        Serial.println("----------------------------------");
-        
-        // Daca vrei sa il transformi in numar pentru calcule:
-         float cursFloat = cursEuro.toFloat();
-         meteo10 = "1 EURO: ";
-         meteo10 = meteo10 + cursEuro + " RON        " ;
-         Serial.print("-> ");
-        Serial.println(cursFloat);
-        Serial.println("----------------------------------");
-     
-      } else {
-        Serial.println("Eroare: Nu s-a gasit eticheta EUR in XML.");
+      if (!stream.available()) {
+        delay(10); // Așteptăm să sosească următorul pachet de date
+        continue;
       }
-    } else {
-      Serial.printf("Eroare la cererea HTTP: %s\n", http3.errorToString(httpCode3).c_str());
+      
+      char c = stream.read();
+      timeout = millis(); // Resetăm timeout-ul la fiecare citire reușită
+
+      if (!foundEUR) {
+        // Căutăm secvența "EUR"
+        if (c == target[matchIndex]) {
+          matchIndex++;
+          if (matchIndex == target.length()) {
+            foundEUR = true; // Am găsit cuvântul EUR!
+          }
+        } else {
+          matchIndex = (c == target[0]) ? 1 : 0; // Resetăm căutarea
+        }
+      } else {
+        // Am găsit EUR, acum așteptăm să trecem de ">" și să citim numărul până la "<"
+        if (!readingValue) {
+          if (c == '>') {
+            readingValue = true; // Următorul caracter e cifra!
+          }
+        } else {
+          if (c == '<') {
+            // GATA! Am extras valoarea. Oprim totul.
+            euroValue.trim();
+            meteo10 = "1 EURO: " + euroValue + " RON";
+            Serial.print("✓ Extras din stream: ");
+            Serial.println(euroValue);
+            break; // Ieșim imediat din buclă (nu mai descărcăm restul de 20KB)
+          } else {
+            if(c != ' ') euroValue += c; // Ignorăm spațiile
+          }
+        }
+      }
     }
     
-    // Eliberam resursele
-    http3.end();
-      Serial.println("=================//========================\n");
+    if (euroValue == "") {
+      Serial.println("Eroare: Nu am reușit să extrag EUR din stream");
+      meteo10 = "Eroare parsare BNR";
     }
-}
 
+  } else {
+    Serial.printf("Eroare HTTP: %s\n", http3.errorToString(httpCode3).c_str());
+    meteo10 = "Eroare conexiune BNR";
+  }
+
+  http3.end();
+  Serial.println("=== Sfarsit BNR ===\n");
+}
 
 void actualizeazaTextSus() {  // create the text for scrolling
     textSus = "";
