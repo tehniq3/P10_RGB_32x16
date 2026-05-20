@@ -206,7 +206,7 @@ String traducereVreme(int cod) {
 
 String directieVant(int grade) {
  // const char* directii[] = {"Nord", "Nord-Est", "Est", "Sud-Est", "Sud", "Sud-Vest", "Vest", "Nord-Vest"};
-  const char* directii[] = {"N", "NE", "E", "SE", "S", "SV", "Vt", "NV"};
+  const char* directii[] = {"N", "NE", "E", "SE", "S", "SV", "V", "NV"};
   int index = int((float)(grade / 45.)) % 8;
   return directii[index];
 }
